@@ -24,11 +24,11 @@ The repository is the public research release accompanying the draft *Linguistic
 
 For a chain of embedded linguistic states, the loop rotation separates as
 
-$$
+$ 
 R_{\mathcal U}=R_{\mathrm{dir}}H,
 \qquad
 H\in \operatorname{Stab}(v_0)\cong \mathrm{SO}(n-1).
-$$
+$ 
 
 The endpoint statistic sees $R_{\mathrm{dir}}$; the path remembers $H$.
 
