@@ -44,3 +44,9 @@ The next run should contain enough independent texts per scheme to fit the regis
 - complete manifests and immutable outputs for every run.
 
 Until that gate is passed, the strongest supported contribution is the combination of Propositions A and B with the intact-window law and its arrangement corollary.
+
+## Automation status
+
+The repository includes a GitHub Actions matrix for Python 3.11 and 3.12. On the initial push, GitHub refused to allocate a runner and annotated the job with `The job was not started because your account is locked due to a billing issue.` No remote test step ran. The identical core suite passes locally: **5 tests passed** on Python 3.11.9.
+
+The workflow remains available through pull requests and manual dispatch. Once the GitHub account-level billing lock is resolved, it should be dispatched again to obtain independent remote confirmation.

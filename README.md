@@ -7,7 +7,7 @@
 <p align="center"><em>Meaning-preserving transformations as paths, not endpoints.</em></p>
 
 <p align="center">
-  <a href="https://github.com/DCorradetti/linguistic-holonomy/actions/workflows/core-checks.yml"><img alt="Core checks" src="https://github.com/DCorradetti/linguistic-holonomy/actions/workflows/core-checks.yml/badge.svg"></a>
+  <img alt="Local tests: 5 passed" src="https://img.shields.io/badge/tests-5%20passed%20locally-2f855a">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11%2B-2d6a8a">
   <img alt="Research release" src="https://img.shields.io/badge/status-research%20release-d6a84b">
   <img alt="Publication status: work in progress" src="https://img.shields.io/badge/publication-work%20in%20progress-7a5c9e">
@@ -77,6 +77,8 @@ python scripts/exp_detector_validation_v1.py
 ```
 
 Each experiment creates a new immutable directory under `results/runs/` with its outputs, log, environment, hashes, conclusions, and limitations.
+
+The GitHub Actions workflow is included for pull requests and manual runs. Its first remote run could not start because GitHub reported an account-level billing lock; no remote test step executed. The same suite passes locally on Python 3.11. See [Research status](STATUS.md#automation-status).
 
 The real-text pipeline additionally downloads language and translation models:
 
