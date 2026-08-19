@@ -4,7 +4,7 @@
 
 <h1 align="center">Linguistic Holonomy</h1>
 
-<p align="center"><em>Meaning-preserving transformations as paths, not endpoints.</em></p>
+<p align="center"><em>Inner Geometry of Meaning-preserving Transformations.</em></p>
 
 <p align="center">
   <img alt="Local tests: 5 passed" src="https://img.shields.io/badge/tests-5%20passed%20locally-2f855a">
