@@ -1,0 +1,32 @@
+[     0.0s] run exp_corpus_v1 v1 started 20260819T174004
+[     0.0s] generator = Qwen/Qwen2.5-0.5B-Instruct
+[    10.7s] tokenizer vocab = 151665; schemes = ['KGW', 'UNIGRAM', 'EXP']
+[    10.8s] resuming: 90 generated records available from i:/O meu disco/SCIENZA/(20260819) LinguisticLoops and WaterMark/7. Results/Article_LLW/run_exp_corpus_v1_20260819T142910/corpus_stage1.json
+[    10.9s] stage 1 complete: 90 records (90 reused, 0 generated)
+[    24.1s]   KGW_012 attempt 1: identical
+[    37.7s]   KGW_012 attempt 2: identical
+[    51.2s]   KGW_012 attempt 3: identical
+[    64.4s]   KGW_012 attempt 4: identical
+[    64.4s]   KGW_012: identical in 4 of 4 regenerations
+[    77.7s]   UNIGRAM_021 attempt 1: DIFFERENT
+[    91.0s]   UNIGRAM_021 attempt 2: DIFFERENT
+[   104.6s]   UNIGRAM_021 attempt 3: DIFFERENT
+[   117.9s]   UNIGRAM_021 attempt 4: DIFFERENT
+[   117.9s]   UNIGRAM_021: identical in 0 of 4 regenerations
+[   131.4s]   UNIGRAM_025 attempt 1: DIFFERENT
+[   144.8s]   UNIGRAM_025 attempt 2: DIFFERENT
+[   158.2s]   UNIGRAM_025 attempt 3: DIFFERENT
+[   171.7s]   UNIGRAM_025 attempt 4: DIFFERENT
+[   171.7s]   UNIGRAM_025: identical in 0 of 4 regenerations
+[   183.7s]   KGW_016 attempt 1: identical
+[   195.7s]   KGW_016 attempt 2: identical
+[   207.8s]   KGW_016 attempt 3: identical
+[   219.9s]   KGW_016 attempt 4: identical
+[   219.9s]   KGW_016: identical in 4 of 4 regenerations
+[   227.7s]   EXP_000 attempt 1: identical
+[   235.4s]   EXP_000 attempt 2: identical
+[   243.2s]   EXP_000 attempt 3: identical
+[   251.0s]   EXP_000 attempt 4: identical
+[   251.0s]   EXP_000: identical in 4 of 4 regenerations
+[   251.0s] targeted audit: 12 of 20 regenerations reproduced the stored record
+[   251.0s] run complete -> run_exp_corpus_v1_20260819T174004

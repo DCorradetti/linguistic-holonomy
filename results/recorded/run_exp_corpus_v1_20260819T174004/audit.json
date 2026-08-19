@@ -1,0 +1,48 @@
+{
+  "mode": "targeted",
+  "n_checked": 20,
+  "n_identical": 12,
+  "records": [
+    {
+      "uid": "KGW_012",
+      "n_repeats": 4,
+      "n_identical": 4,
+      "common_prefixes": []
+    },
+    {
+      "uid": "UNIGRAM_021",
+      "n_repeats": 4,
+      "n_identical": 0,
+      "common_prefixes": [
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    {
+      "uid": "UNIGRAM_025",
+      "n_repeats": 4,
+      "n_identical": 0,
+      "common_prefixes": [
+        173,
+        173,
+        173,
+        173
+      ]
+    },
+    {
+      "uid": "KGW_016",
+      "n_repeats": 4,
+      "n_identical": 4,
+      "common_prefixes": []
+    },
+    {
+      "uid": "EXP_000",
+      "n_repeats": 4,
+      "n_identical": 4,
+      "common_prefixes": []
+    }
+  ],
+  "differing": []
+}

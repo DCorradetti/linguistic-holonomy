@@ -1,0 +1,14 @@
+[     0.0s] run exp_indicators_v1 v1 started 20260819T161524
+[     0.0s] corpus = I:\O meu disco\SCIENZA\(20260819) LinguisticLoops and WaterMark\7. Results\Article_LLW\run_exp_corpus_v1_20260819T154350\corpus.json
+[     0.0s] 540 chains to process
+[     7.3s] embedder = sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[     7.3s] encoding 2340 waypoints
+[   120.9s] embeddings: (2340, 384)
+[   187.7s] minimum cosine similarity between consecutive waypoints: 0.1483  (hypothesis of Certificate_holonomy requires it to stay well above -1)
+[   187.7s]   rt_de        n=  90  delta=0.0711  eta=0.0918  rho=0.7333  z-ratio=0.6331
+[   187.7s]   rt_de_de     n=  90  delta=0.0818  eta=0.1008  rho=0.6917  z-ratio=0.5913
+[   187.7s]   rt_de_fr     n=  90  delta=0.1085  eta=0.1181  rho=0.6444  z-ratio=0.5544
+[   187.7s]   rt_es        n=  90  delta=0.0640  eta=0.0825  rho=0.7667  z-ratio=0.6804
+[   187.7s]   rt_fr        n=  90  delta=0.0733  eta=0.0938  rho=0.7225  z-ratio=0.6255
+[   187.7s]   rt_fr_de_es  n=  90  delta=0.1159  eta=0.1288  rho=0.5944  z-ratio=0.4965
+[   187.8s] run complete -> run_exp_indicators_v1_20260819T161524

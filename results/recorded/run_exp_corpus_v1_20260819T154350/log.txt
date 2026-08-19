@@ -1,0 +1,110 @@
+[     0.0s] run exp_corpus_v1 v1 started 20260819T154350
+[     0.0s] generator = Qwen/Qwen2.5-0.5B-Instruct
+[     6.6s] tokenizer vocab = 151665; schemes = ['KGW', 'UNIGRAM', 'EXP']
+[     6.6s] resuming: 90 generated records available from i:/O meu disco/SCIENZA/(20260819) LinguisticLoops and WaterMark/7. Results/Article_LLW/run_exp_corpus_v1_20260819T142910/corpus_stage1.json
+[     6.7s] stage 1 complete: 90 records (90 reused, 0 generated)
+[    20.1s]   resume audit KGW_005: identical
+[    33.3s]   resume audit EXP_008: identical
+[    46.5s]   resume audit EXP_020: identical
+[    59.6s]   resume audit EXP_006: identical
+[    72.8s]   resume audit EXP_025: identical
+[    86.0s]   resume audit EXP_001: identical
+[    99.3s]   resume audit UNIGRAM_019: identical
+[   112.7s]   resume audit UNIGRAM_028: identical
+[   126.1s]   resume audit KGW_001: identical
+[   139.3s]   resume audit EXP_012: identical
+[   152.7s]   resume audit UNIGRAM_014: identical
+[   166.0s]   resume audit UNIGRAM_020: identical
+[   179.6s]   resume audit UNIGRAM_023: identical
+[   193.1s]   resume audit UNIGRAM_022: identical
+[   206.6s]   resume audit UNIGRAM_007: identical
+[   220.1s]   resume audit KGW_007: identical
+[   233.6s]   resume audit KGW_006: identical
+[   247.2s]   resume audit KGW_010: identical
+[   260.4s]   resume audit KGW_009: identical
+[   273.6s]   resume audit KGW_017: identical
+[   286.8s]   resume audit KGW_019: identical
+[   300.1s]   resume audit UNIGRAM_002: identical
+[   313.2s]   resume audit EXP_015: identical
+[   326.4s]   resume audit UNIGRAM_013: identical
+[   339.4s]   resume audit EXP_017: identical
+[   352.7s]   resume audit UNIGRAM_015: identical
+[   365.8s]   resume audit EXP_005: identical
+[   379.2s]   resume audit UNIGRAM_011: identical
+[   392.4s]   resume audit UNIGRAM_026: identical
+[   399.1s]   resume audit EXP_027: identical
+[   412.4s]   resume audit KGW_023: identical
+[   425.7s]   resume audit KGW_021: identical
+[   438.8s]   resume audit EXP_002: identical
+[   451.8s]   resume audit EXP_029: identical
+[   465.1s]   resume audit KGW_004: identical
+[   478.1s]   resume audit EXP_016: identical
+[   491.2s]   resume audit EXP_004: identical
+[   504.5s]   resume audit UNIGRAM_005: identical
+[   516.4s]   resume audit KGW_016: identical
+[   529.7s]   resume audit UNIGRAM_017: identical
+[   542.8s]   resume audit EXP_003: identical
+[   556.1s]   resume audit UNIGRAM_027: identical
+[   569.4s]   resume audit KGW_028: identical
+[   582.7s]   resume audit KGW_011: identical
+[   585.9s]   resume audit KGW_029: identical
+[   599.2s]   resume audit UNIGRAM_029: identical
+[   612.5s]   resume audit UNIGRAM_006: identical
+[   625.8s]   resume audit KGW_024: identical
+[   639.1s]   resume audit UNIGRAM_009: identical
+[   652.4s]   resume audit KGW_015: identical
+[   665.7s]   resume audit UNIGRAM_016: identical
+[   678.8s]   resume audit EXP_014: identical
+[   692.1s]   resume audit KGW_014: identical
+[   705.4s]   resume audit UNIGRAM_021: DIFFERENT after 82 of 180 tokens
+[   718.5s]   resume audit EXP_010: identical
+[   731.6s]   resume audit EXP_023: identical
+[   744.9s]   resume audit UNIGRAM_018: identical
+[   758.2s]   resume audit UNIGRAM_025: DIFFERENT after 173 of 180 tokens
+[   771.5s]   resume audit KGW_003: identical
+[   784.8s]   resume audit UNIGRAM_012: identical
+[   798.1s]   resume audit KGW_002: identical
+[   811.6s]   resume audit KGW_000: identical
+[   824.9s]   resume audit KGW_027: identical
+[   838.1s]   resume audit EXP_022: identical
+[   851.2s]   resume audit EXP_028: identical
+[   858.9s]   resume audit EXP_000: identical
+[   872.0s]   resume audit EXP_011: identical
+[   885.4s]   resume audit KGW_008: identical
+[   898.6s]   resume audit EXP_013: identical
+[   911.9s]   resume audit KGW_025: identical
+[   924.9s]   resume audit EXP_021: identical
+[   938.2s]   resume audit KGW_012: DIFFERENT after 153 of 180 tokens
+[   951.3s]   resume audit EXP_007: identical
+[   964.6s]   resume audit UNIGRAM_004: identical
+[   977.9s]   resume audit KGW_018: identical
+[   991.2s]   resume audit UNIGRAM_003: identical
+[  1004.6s]   resume audit KGW_013: identical
+[  1017.7s]   resume audit EXP_019: identical
+[  1031.0s]   resume audit UNIGRAM_008: identical
+[  1044.1s]   resume audit EXP_009: identical
+[  1057.4s]   resume audit UNIGRAM_000: identical
+[  1070.7s]   resume audit KGW_022: identical
+[  1084.0s]   resume audit UNIGRAM_001: identical
+[  1097.3s]   resume audit KGW_020: identical
+[  1106.0s]   resume audit UNIGRAM_024: identical
+[  1119.3s]   resume audit KGW_026: identical
+[  1132.4s]   resume audit EXP_024: identical
+[  1145.5s]   resume audit EXP_018: identical
+[  1158.6s]   resume audit EXP_026: identical
+[  1172.0s]   resume audit UNIGRAM_010: identical
+[  1172.0s] resume audit: 87/90 regenerated records identical token for token; 3 diverged, which is what a change in the accumulation order of a CPU kernel does to a sampling boundary
+[  1172.0s]   KGW      median z0 =   9.62  detected@z>4: 30/30
+[  1172.0s]   UNIGRAM  median z0 =   9.30  detected@z>4: 30/30
+[  1172.0s]   EXP      median z0 =  19.05  detected@z>4: 30/30
+[  1172.1s] generator released before loading the translation models
+[  1172.1s] merging 450 chain records (['rt_de', 'rt_de_de', 'rt_de_fr', 'rt_es', 'rt_fr']) from run_exp_corpus_v1_20260819T150817
+[  1172.1s] chain rt_fr_de_es: pivots ['fr', 'de', 'es']
+[  1370.4s]   ... through fr done (90 docs)
+[  1610.1s]   ... through de done (90 docs)
+[  1863.5s]   ... through es done (90 docs)
+[  1866.5s] chain rt_fr_de_es complete (540 chain records so far)
+[  1866.5s]   KGW      z0=9.62 -> z_final=4.78 (rho=0.700)
+[  1866.5s]   UNIGRAM  z0=9.30 -> z_final=6.58 (rho=0.694)
+[  1866.5s]   EXP      z0=19.05 -> z_final=10.91 (rho=0.689)
+[  1866.6s] run complete -> run_exp_corpus_v1_20260819T154350

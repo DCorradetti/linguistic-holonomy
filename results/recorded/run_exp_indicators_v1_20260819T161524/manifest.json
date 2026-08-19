@@ -1,0 +1,78 @@
+{
+  "script": "exp_indicators_v1",
+  "script_version": "v1",
+  "script_sha256": "4290d9807aad801e89e6ab39c180d73c8266af940f334c05efa7a99e2b7e0ed7",
+  "timestamp_utc": "2026-08-19T15:18:31Z",
+  "wall_seconds": 187.8,
+  "command": "python exp_indicators_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "corpus": "I:\\O meu disco\\SCIENZA\\(20260819) LinguisticLoops and WaterMark\\7. Results\\Article_LLW\\run_exp_corpus_v1_20260819T154350\\corpus.json",
+    "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  },
+  "output_sha256": {
+    "indicators.json": "d09dea9d9b62ef8ddf66384bf4555c3de980509ebe81fb5d76109cca20e3aac0"
+  },
+  "conclusions": {
+    "n_chains": 540,
+    "min_consecutive_cosine": 0.1482576931047932,
+    "by_chain": {
+      "rt_de": {
+        "n": 90,
+        "median_delta": 0.07112022759720832,
+        "median_eta": 0.09181619154322135,
+        "median_rho": 0.7333333333333333,
+        "median_ratio": 0.6331019044134183
+      },
+      "rt_de_de": {
+        "n": 90,
+        "median_delta": 0.0818330644841393,
+        "median_eta": 0.10079494339270631,
+        "median_rho": 0.6916666666666667,
+        "median_ratio": 0.5912563050528992
+      },
+      "rt_de_fr": {
+        "n": 90,
+        "median_delta": 0.10853619418867427,
+        "median_eta": 0.11811838359387836,
+        "median_rho": 0.6444444444444445,
+        "median_ratio": 0.554428846132387
+      },
+      "rt_es": {
+        "n": 90,
+        "median_delta": 0.06397024093577869,
+        "median_eta": 0.08253134943568896,
+        "median_rho": 0.7666666666666667,
+        "median_ratio": 0.6804242764806363
+      },
+      "rt_fr": {
+        "n": 90,
+        "median_delta": 0.07334478980511255,
+        "median_eta": 0.09382855158135014,
+        "median_rho": 0.7224556489262371,
+        "median_ratio": 0.6254612861704687
+      },
+      "rt_fr_de_es": {
+        "n": 90,
+        "median_delta": 0.11588870095411735,
+        "median_eta": 0.1287521047274544,
+        "median_rho": 0.5944444444444444,
+        "median_ratio": 0.4964962118163114
+      }
+    }
+  },
+  "limitations": [
+    "A single embedder; Plan_v1 risk R4 requires replication across at least three before the empirical claim is final.",
+    "Mean pooling over a 512-token window truncates the longest waypoints.",
+    "The embedder is multilingual but not equally strong in all four languages, so part of the measured path length in the pivot waypoints is encoder anisotropy rather than meaning."
+  ]
+}
