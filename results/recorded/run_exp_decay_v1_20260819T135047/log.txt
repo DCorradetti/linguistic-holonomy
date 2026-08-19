@@ -1,0 +1,71 @@
+[     0.0s] run exp_decay_v1 v1 started 20260819T135047
+[    13.7s] KGW h=0: baseline statistic = 20.92 (sd 0.97)
+[    26.7s]   iid       mean |observed - rho^(h+1)| = 0.0023
+[    40.4s]   block     mean |observed - rho^(h+1)| = 0.0028
+[    56.0s]   periodic  mean |observed - rho^(h+1)| = 0.0028
+[    78.3s] KGW h=1: baseline statistic = 21.01 (sd 1.03)
+[    93.9s]   iid       mean |observed - rho^(h+1)| = 0.0023
+[   109.1s]   block     mean |observed - rho^(h+1)| = 0.1379
+[   127.1s]   periodic  mean |observed - rho^(h+1)| = 0.0805
+[   151.0s] KGW h=2: baseline statistic = 20.86 (sd 1.15)
+[   168.6s]   iid       mean |observed - rho^(h+1)| = 0.0022
+[   185.9s]   block     mean |observed - rho^(h+1)| = 0.2325
+[   211.3s]   periodic  mean |observed - rho^(h+1)| = 0.0739
+[   242.7s] KGW h=3: baseline statistic = 20.86 (sd 1.04)
+[   267.4s]   iid       mean |observed - rho^(h+1)| = 0.0021
+[   291.4s]   block     mean |observed - rho^(h+1)| = 0.2961
+[   318.2s]   periodic  mean |observed - rho^(h+1)| = 0.0786
+[   341.0s] EXP h=1: baseline statistic = 2264.51 (sd 56.21)
+[   365.3s]   iid       mean |observed - rho^(h+1)| = 0.0011
+[   385.4s]   block     mean |observed - rho^(h+1)| = 0.1402
+[   405.3s]   periodic  mean |observed - rho^(h+1)| = 0.0770
+[   405.3s] 
+[   405.3s] Theorem C under i.i.d. edits (observed / predicted):
+[   405.3s]   scheme  h   rho    observed  predicted   ctx-retention
+[   405.3s]   KGW     0  1.00     1.0000    1.0000     1.0000
+[   405.3s]   KGW     0  0.95     0.9527    0.9500     0.9500
+[   405.3s]   KGW     0  0.90     0.9005    0.9000     0.9000
+[   405.3s]   KGW     0  0.80     0.7973    0.8000     0.8001
+[   405.3s]   KGW     0  0.70     0.7012    0.7000     0.7000
+[   405.3s]   KGW     0  0.60     0.6080    0.6000     0.6000
+[   405.3s]   KGW     0  0.50     0.4988    0.5000     0.4999
+[   405.3s]   KGW     1  1.00     1.0000    1.0000     1.0000
+[   405.3s]   KGW     1  0.95     0.9038    0.9025     0.9022
+[   405.3s]   KGW     1  0.90     0.8060    0.8100     0.8101
+[   405.3s]   KGW     1  0.80     0.6365    0.6400     0.6404
+[   405.3s]   KGW     1  0.70     0.4921    0.4900     0.4895
+[   405.3s]   KGW     1  0.60     0.3619    0.3600     0.3595
+[   405.3s]   KGW     1  0.50     0.2465    0.2500     0.2475
+[   405.3s]   KGW     2  1.00     1.0000    1.0000     1.0000
+[   405.3s]   KGW     2  0.95     0.8572    0.8574     0.8579
+[   405.3s]   KGW     2  0.90     0.7339    0.7290     0.7285
+[   405.3s]   KGW     2  0.80     0.5102    0.5120     0.5125
+[   405.3s]   KGW     2  0.70     0.3420    0.3430     0.3403
+[   405.3s]   KGW     2  0.60     0.2085    0.2160     0.2146
+[   405.3s]   KGW     2  0.50     0.1253    0.1250     0.1253
+[   405.3s]   KGW     3  1.00     1.0000    1.0000     1.0000
+[   405.3s]   KGW     3  0.95     0.8139    0.8145     0.8144
+[   405.3s]   KGW     3  0.90     0.6559    0.6561     0.6551
+[   405.3s]   KGW     3  0.80     0.4040    0.4096     0.4076
+[   405.3s]   KGW     3  0.70     0.2380    0.2401     0.2389
+[   405.3s]   KGW     3  0.60     0.1258    0.1296     0.1281
+[   405.3s]   KGW     3  0.50     0.0648    0.0625     0.0623
+[   405.3s]   EXP     1  1.00     1.0000    1.0000     1.0000
+[   405.3s]   EXP     1  0.95     0.9016    0.9025     0.9025
+[   405.3s]   EXP     1  0.90     0.8089    0.8100     0.8098
+[   405.3s]   EXP     1  0.80     0.6416    0.6400     0.6398
+[   405.3s]   EXP     1  0.70     0.4874    0.4900     0.4883
+[   405.3s]   EXP     1  0.60     0.3587    0.3600     0.3607
+[   405.3s]   EXP     1  0.50     0.2501    0.2500     0.2496
+[   405.3s] 
+[   405.3s] Same retention rate, different arrangement of the edits (KGW h=1):
+[   405.3s]   rho     iid      block   periodic
+[   405.3s]   1.00   1.0000   1.0000   1.0000
+[   405.3s]   0.95   0.9038   0.9470   0.9028
+[   405.3s]   0.90   0.8060   0.8967   0.8016
+[   405.3s]   0.80   0.6365   0.7947   0.5951
+[   405.3s]   0.70   0.4921   0.6973   0.3988
+[   405.3s]   0.60   0.3619   0.5943   0.1962
+[   405.3s]   0.50   0.2465   0.4880  -0.0048
+[   405.3s]   --> largest gap between block and i.i.d. at equal rho: 0.2415
+[   411.3s] run complete -> run_exp_decay_v1_20260819T135047

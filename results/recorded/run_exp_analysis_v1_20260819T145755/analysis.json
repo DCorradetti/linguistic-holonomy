@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "alpha": 0.01,
+    "min_z0": 4.0,
+    "n_strata": 4,
+    "n_total": 18,
+    "n_kept": 12
+  },
+  "theorem_C": {},
+  "result_D_full": {},
+  "matched_delta_strata": {},
+  "result_D_english_channel_exploratory": {},
+  "verdict": {
+    "result_D": "UNDETERMINED",
+    "n_schemes_passing": 0,
+    "n_schemes_tested": 0
+  }
+}

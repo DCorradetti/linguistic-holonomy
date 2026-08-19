@@ -1,0 +1,37 @@
+{
+  "script": "exp_analysis_v1",
+  "script_version": "v1",
+  "script_sha256": "6f53d8c490b8d4fe70bbc5f116e6a2a4dfb97778e92b31153ee48a523b306693",
+  "timestamp_utc": "2026-08-19T13:57:55Z",
+  "wall_seconds": 0.0,
+  "command": "python exp_analysis_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "indicators": "results\\recorded\\run_exp_indicators_v1_20260819T143755\\indicators.json",
+    "alpha": 0.01,
+    "min_z0": 4.0
+  },
+  "output_sha256": {
+    "analysis.json": "e96aaf7ca766bc3e329ae0076d96af63f1865adb95e20c296fffe4350fa38e84"
+  },
+  "conclusions": {
+    "result_D_verdict": "UNDETERMINED",
+    "n_schemes_passing": 0,
+    "theorem_C": {}
+  },
+  "limitations": [
+    "Round-trip machine translation is one attack family; the verdict does not transfer to learned paraphrasers untested here.",
+    "Chains within a scheme share the same 36 prompts, so observations are not fully independent; the standard errors are therefore optimistic.",
+    "A single embedder defines both delta and eta.",
+    "The holonomy energy is one scalar reduction of H; a null result for it is not a null result for the path datum itself."
+  ]
+}

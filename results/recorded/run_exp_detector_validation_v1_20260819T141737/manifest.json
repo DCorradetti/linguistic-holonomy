@@ -1,0 +1,43 @@
+{
+  "script": "exp_detector_validation_v1",
+  "script_version": "v1",
+  "script_sha256": "48fd2c3e04e3affb3301d058eb0056f23d1f5f4bea0f9c462a351e03d2802b09",
+  "timestamp_utc": "2026-08-19T13:20:40Z",
+  "wall_seconds": 182.8,
+  "command": "python exp_detector_validation_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "vocab": 4000,
+    "T": 400,
+    "n_null": 400,
+    "key": 20260819,
+    "other_key": 987654321
+  },
+  "output_sha256": {
+    "validation.json": "26fd07b63ec21869ebdef6602539b18ab2d64e43c8b963be7e49439358251196"
+  },
+  "conclusions": {
+    "all_checks_passed": true,
+    "green_fraction_ok": true,
+    "null_normal_ok_h_ge_1": true,
+    "h0_key_offset_as_predicted": true,
+    "h0_offset_sd": 0.3278532259590244,
+    "key_specific_ok": true,
+    "detects_with_right_key": true,
+    "exp_pvalues_uniform": true
+  },
+  "limitations": [
+    "Self-calibration only: the schemes are re-implemented here rather than imported, so there are no published reference numbers to reproduce. Cross-checking against MarkLLM or the reference repositories remains open.",
+    "The null streams are uniform over the vocabulary, which is the easiest null; natural text has burstiness that a real deployment must calibrate against.",
+    "For h = 0 the null is key-dependent by construction, so the z-score is not exactly standard normal; the offset is of order sqrt(T/|V|) and is negligible at realistic vocabulary sizes but not at the synthetic |V| = 4000 used here."
+  ]
+}

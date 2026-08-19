@@ -1,0 +1,14 @@
+[     0.0s] run exp_indicators_v1 v1 started 20260819T143755
+[     0.0s] corpus = ..\..\7. Results\Article_LLW\run_exp_corpus_v1_20260819T122428\corpus.json
+[     0.0s] 18 chains to process
+[    26.2s] embedder = sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[    26.2s] encoding 78 waypoints
+[    27.1s] embeddings: (78, 384)
+[    28.7s] minimum cosine similarity between consecutive waypoints: 0.7043  (hypothesis of Certificate_holonomy requires it to stay well above -1)
+[    28.7s]   rt_de        n=   3  delta=0.0397  eta=0.0692  rho=0.8750  z-ratio=0.7884
+[    28.7s]   rt_de_de     n=   3  delta=0.0222  eta=0.0613  rho=0.8500  z-ratio=0.8725
+[    28.7s]   rt_de_fr     n=   3  delta=0.0475  eta=0.0860  rho=0.8000  z-ratio=0.7462
+[    28.7s]   rt_es        n=   3  delta=0.0653  eta=0.0358  rho=0.8250  z-ratio=0.7019
+[    28.7s]   rt_fr        n=   3  delta=0.0143  eta=0.0472  rho=0.8000  z-ratio=0.8049
+[    28.7s]   rt_fr_de_es  n=   3  delta=0.1398  eta=0.0957  rho=0.6500  z-ratio=0.7928
+[    28.8s] run complete -> run_exp_indicators_v1_20260819T143755

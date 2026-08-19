@@ -1,0 +1,45 @@
+{
+  "script": "exp_geometry_v1",
+  "script_version": "v1",
+  "script_sha256": "8c2d63b4e718d0bf22b1f86db4c75e6c1a0265625f6f1d38069b62c0c2ebd3b2",
+  "timestamp_utc": "2026-08-19T13:01:20Z",
+  "wall_seconds": 177.4,
+  "command": "python exp_geometry_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "seed": 20260819,
+    "dims": [
+      8,
+      16,
+      64,
+      384
+    ]
+  },
+  "output_sha256": {
+    "geometry.json": "01de0688359dc41802045f602535853d693ac74bf0f92d9e3ef95326dc18f2ea"
+  },
+  "conclusions": {
+    "propositions_A_B_verified": true,
+    "worst_min_eigenvalue": -6.11801775998981e-15,
+    "worst_n_minus": 0.0,
+    "worst_holonomy_fix_error": 3.2739929613127353e-12,
+    "worst_factorisation_error": 5.894428946721256e-12,
+    "realisability_delta_spread": 0.0,
+    "realisability_eta_spread": 1.0464761199791823,
+    "gauss_bonnet_worst_error": 1.7831948055744423e-09,
+    "kill_criterion_K1_excluded": true
+  },
+  "limitations": [
+    "Numerical verification, not proof; the proofs are in 3. Certificates/Article_LLW/.",
+    "Chains are pseudo-random walks, not embeddings of real text; the propositions are basis-free so this is sufficient for them, but it says nothing about the empirical claim of the article."
+  ]
+}

@@ -1,0 +1,21 @@
+[     0.0s] run exp_detector_validation_v1 v1 started 20260819T141737
+[     0.0s] N1  unwatermarked token streams
+[     8.2s]   h=0  green fraction 0.2539 (gamma=0.25)  z ~ N(+0.181, 1.064)  KS=0.1030 p=0.000  FPR@z>4 = 0.0000
+[    17.6s]   h=1  green fraction 0.2475 (gamma=0.25)  z ~ N(-0.115, 0.989)  KS=0.0697 p=0.039  FPR@z>4 = 0.0000
+[    27.5s]   h=2  green fraction 0.2508 (gamma=0.25)  z ~ N(+0.037, 0.971)  KS=0.0637 p=0.074  FPR@z>4 = 0.0000
+[    37.7s]   h=3  green fraction 0.2498 (gamma=0.25)  z ~ N(-0.011, 1.033)  KS=0.0564 p=0.152  FPR@z>4 = 0.0000
+[    37.7s] 
+[    37.7s] N1b  key-dependent null offset of the h = 0 scheme
+[    83.8s]   over 24 keys: offset mean +0.0734, sd 0.3279; predicted sd sqrt(T/|V|) = 0.3162
+[    83.8s]   for the corpus experiment (T = 180, |V| = 151665) the same quantity is 0.0345, i.e. negligible
+[    83.8s] 
+[    83.8s] N2/N3  watermarked text, wrong key versus right key
+[   117.0s]   KGW      h=1  right key: mean z =  20.77, detected 100.0%   |   wrong key: mean z = -0.030 (sd 0.975), false alarms 0.0%
+[   147.9s]   UNIGRAM  h=0  right key: mean z =  20.93, detected 100.0%   |   wrong key: mean z = +0.027 (sd 1.006), false alarms 0.0%
+[   172.8s]   EXP      h=1  right key: mean z =  37.05, detected 100.0%   |   wrong key: mean z = -0.293 (sd 1.099), false alarms 0.0%
+[   172.8s] 
+[   172.8s] N4  exponential family, uniformity of the p-values under the null
+[   182.7s]   KS against Uniform(0,1) = 0.0443  p = 0.401  mean p-value = 0.4990
+[   182.7s] 
+[   182.7s] calibration checks passed: True  (green=True, normal[h>=1]=True, h0_offset=True, keyed=True, detect=True, uniform=True)
+[   189.2s] run complete -> run_exp_detector_validation_v1_20260819T141737

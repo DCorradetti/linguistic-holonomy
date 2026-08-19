@@ -1,0 +1,38 @@
+{
+  "script": "exp_decay_v1",
+  "script_version": "v1",
+  "script_sha256": "931f4c49d5aec40cf7b81302196d2010c5972a3cda71cd5d8095ca9223aeecfc",
+  "timestamp_utc": "2026-08-19T12:57:32Z",
+  "wall_seconds": 405.4,
+  "command": "python exp_decay_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "vocab": 4000,
+    "T": 400,
+    "n_seq": 120,
+    "key": 20260819
+  },
+  "output_sha256": {
+    "decay.json": "9d7d4b716b7740532e3a214a2dffc8584fbf49afda93ece1f167bc7a2298d2c3"
+  },
+  "conclusions": {
+    "theorem_C_mae_iid": 0.002347620592516125,
+    "theorem_C_supported": true,
+    "max_block_vs_iid_gap_at_equal_rho": 0.2414836550364495,
+    "arrangement_matters": true
+  },
+  "limitations": [
+    "Substitution only: insertions and deletions shift the seeding window and are outside the model of Theorem C.",
+    "The generator is synthetic; entropy is held fixed by construction and does not vary with content as it does in real text.",
+    "Replacement tokens are drawn uniformly, which is the most favourable case for the null calibration."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "script": "exp_corpus_v1",
+  "script_version": "v1",
+  "script_sha256": "029451b328221dea7317530c70c6e2dee1464d6526597673f47dbc646532509f",
+  "timestamp_utc": "2026-08-19T11:27:37Z",
+  "wall_seconds": 188.9,
+  "command": "python exp_corpus_v1.py --n-prompts 1 --max-new-tokens 40",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+    "pivots": [
+      "de",
+      "es",
+      "fr"
+    ],
+    "n_prompts": 1,
+    "max_new_tokens": 40,
+    "temperature": 1.0,
+    "key": 20260819
+  },
+  "output_sha256": {
+    "corpus.json": "efd374f6afae9b6aa7bbaecfc18fab8ef04b9901a3819bf22bf8dac8c516f45d",
+    "corpus_stage1.json": "df439edba7f36587cdaf7b0817472968e654333d34a726524df487b5f3d85d35"
+  },
+  "conclusions": {
+    "KGW": {
+      "median_z0": 4.160251471689218,
+      "median_z_final": 2.3695509959607612,
+      "median_rho_final": 0.725,
+      "n_chains": 6
+    },
+    "UNIGRAM": {
+      "median_z0": 4.016632088371218,
+      "median_z_final": 3.905419918856537,
+      "median_rho_final": 0.825,
+      "n_chains": 6
+    },
+    "EXP": {
+      "median_z0": 3.8142392637280946,
+      "median_z_final": 3.038620823673444,
+      "median_rho_final": 0.825,
+      "n_chains": 6
+    }
+  },
+  "limitations": [
+    "CPU-only run: generator is Qwen2.5-0.5B-Instruct, not a 3-8B model.",
+    "Transformations are round-trip machine translation only; learned paraphrasers (DIPPER) and human editing are not covered.",
+    "EXP detection uses the alignment-free context-seeded variant; the edit-distance aligned detector of Kuditipudi et al. is not implemented.",
+    "Sentence-wise translation preserves document structure but is itself a modelling choice that slightly favours retention."
+  ]
+}

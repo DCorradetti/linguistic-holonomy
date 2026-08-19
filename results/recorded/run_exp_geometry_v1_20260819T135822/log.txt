@@ -1,0 +1,34 @@
+[     0.0s] run exp_geometry_v1 v1 started 20260819T135822
+[     0.2s] n =    8  min_eig = -3.458e-16  n_minus = 0  |n+ - 2p| = 0  fix_err = 3.274e-12  factorisation_err = 5.894e-12
+[     0.3s] n =   16  min_eig = -6.196e-16  n_minus = 0  |n+ - 2p| = 0  fix_err = 1.084e-12  factorisation_err = 1.898e-12
+[     0.7s] n =   64  min_eig = -1.961e-15  n_minus = 0  |n+ - 2p| = 0  fix_err = 2.502e-13  factorisation_err = 3.927e-13
+[   177.0s] n =  384  min_eig = -6.118e-15  n_minus = 0  |n+ - 2p| = 0  fix_err = 7.333e-14  factorisation_err = 1.068e-13
+[   177.0s] 
+[   177.0s] Proposition B, realisability: prescribed endpoint, growing detour
+[   177.0s]   detours=0  delta=0.12241744  eta=0.0000  sylvester=[2, 0, 62]
+[   177.0s]   detours=1  delta=0.12241744  eta=0.2454  sylvester=[2, 0, 62]
+[   177.0s]   detours=2  delta=0.12241744  eta=0.5190  sylvester=[4, 0, 60]
+[   177.0s]   detours=3  delta=0.12241744  eta=0.6898  sylvester=[4, 0, 60]
+[   177.0s]   detours=4  delta=0.12241744  eta=0.8260  sylvester=[6, 0, 58]
+[   177.0s]   detours=5  delta=0.12241744  eta=0.9427  sylvester=[6, 0, 58]
+[   177.0s]   detours=6  delta=0.12241744  eta=1.0465  sylvester=[8, 0, 56]
+[   177.0s]   --> delta spread = 0.000e+00   eta spread = 1.0465
+[   177.0s] 
+[   177.0s] Proposition B item 4, Gauss-Bonnet check on the two-sphere:
+[   177.1s]   excess =  5.107902  principal =  1.175284  holonomy =  1.175284  error = 4.37e-11
+[   177.1s]   excess =  0.829690  principal =  0.829690  holonomy =  0.829690  error = 3.09e-12
+[   177.1s]   excess =  0.310025  principal =  0.310025  holonomy =  0.310025  error = 3.88e-12
+[   177.1s]   excess =  2.744701  principal =  2.744701  holonomy =  2.744701  error = 5.43e-12
+[   177.1s]   excess =  5.363483  principal =  0.919702  holonomy =  0.919702  error = 2.44e-11
+[   177.1s]   excess =  0.817232  principal =  0.817232  holonomy =  0.817232  error = 2.33e-12
+[   177.1s]   --> worst error over 200 triangles: 1.78e-09
+[   177.1s]   --> worst error over the 159 triangles of area <= pi: 1.78e-09
+[   177.1s] 
+[   177.1s] Proposition A, signature blindness (n = 64):
+[   177.4s]   signature [2, 0, 62]       count= 29  loop energy in [0.545, 1.049]  ratio=1.93  holonomy energy in [0.099, 0.252]
+[   177.4s]   signature [4, 0, 60]       count= 55  loop energy in [0.720, 1.318]  ratio=1.83  holonomy energy in [0.164, 0.526]
+[   177.4s]   signature [6, 0, 58]       count= 58  loop energy in [0.862, 1.442]  ratio=1.67  holonomy energy in [0.262, 0.609]
+[   177.4s]   signature [8, 0, 56]       count= 58  loop energy in [0.937, 1.464]  ratio=1.56  holonomy energy in [0.365, 0.791]
+[   177.4s] 
+[   177.4s] ALL CHECKS PASSED: True
+[   184.7s] run complete -> run_exp_geometry_v1_20260819T135822

@@ -1,0 +1,78 @@
+{
+  "script": "exp_indicators_v1",
+  "script_version": "v1",
+  "script_sha256": "d888ac6a43f308d4f4da4d794e07230fd5e2ad1669cd82e3abac6cbfcc7331cb",
+  "timestamp_utc": "2026-08-19T13:38:23Z",
+  "wall_seconds": 28.7,
+  "command": "python exp_indicators_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "corpus": "..\\..\\7. Results\\Article_LLW\\run_exp_corpus_v1_20260819T122428\\corpus.json",
+    "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  },
+  "output_sha256": {
+    "indicators.json": "b0fb147165b40df939054d9b7cd2efd682d80e111ecae4fbeecf72a75f852a8c"
+  },
+  "conclusions": {
+    "n_chains": 18,
+    "min_consecutive_cosine": 0.7042903468922236,
+    "by_chain": {
+      "rt_de": {
+        "n": 3,
+        "median_delta": 0.03966773736864537,
+        "median_eta": 0.06919339275875781,
+        "median_rho": 0.875,
+        "median_ratio": 0.7883856790196003
+      },
+      "rt_de_de": {
+        "n": 3,
+        "median_delta": 0.022208641417608144,
+        "median_eta": 0.06129228361487471,
+        "median_rho": 0.85,
+        "median_ratio": 0.8725309693384722
+      },
+      "rt_de_fr": {
+        "n": 3,
+        "median_delta": 0.047495045516293355,
+        "median_eta": 0.0860418600445606,
+        "median_rho": 0.8,
+        "median_ratio": 0.7461970404062347
+      },
+      "rt_es": {
+        "n": 3,
+        "median_delta": 0.06533437474865622,
+        "median_eta": 0.035843417228367064,
+        "median_rho": 0.825,
+        "median_ratio": 0.7019171822535234
+      },
+      "rt_fr": {
+        "n": 3,
+        "median_delta": 0.014254600049910193,
+        "median_eta": 0.04723833394459451,
+        "median_rho": 0.8,
+        "median_ratio": 0.8049180513307871
+      },
+      "rt_fr_de_es": {
+        "n": 3,
+        "median_delta": 0.1397808426339463,
+        "median_eta": 0.09568462156509078,
+        "median_rho": 0.65,
+        "median_ratio": 0.7928014538839827
+      }
+    }
+  },
+  "limitations": [
+    "A single embedder; Plan_v1 risk R4 requires replication across at least three before the empirical claim is final.",
+    "Mean pooling over a 512-token window truncates the longest waypoints.",
+    "The embedder is multilingual but not equally strong in all four languages, so part of the measured path length in the pivot waypoints is encoder anisotropy rather than meaning."
+  ]
+}

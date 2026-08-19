@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.png binary
+*.pdf binary
+
+# Preserve research artifacts byte-for-byte so recorded SHA-256 values stay
+# meaningful after cloning on any platform.
+paper/*.tex -text whitespace=cr-at-eol
+certificates/** -text whitespace=cr-at-eol
+scripts/*.py -text whitespace=cr-at-eol
+results/recorded/** -text -whitespace

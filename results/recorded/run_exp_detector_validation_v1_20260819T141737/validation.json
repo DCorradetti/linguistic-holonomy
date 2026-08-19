@@ -1,0 +1,78 @@
+{
+  "N1_h0": {
+    "mean_green_fraction": 0.25392499999999996,
+    "gamma": 0.25,
+    "mean_z": 0.1812879845255425,
+    "sd_z": 1.064126675080656,
+    "empirical_fpr_at_z4": 0.0,
+    "nominal_fpr_at_z4": 3.167124183311986e-05,
+    "ks_stat_vs_standard_normal": 0.10298275523059797,
+    "ks_p": 0.0003799599324975716
+  },
+  "N1_h1": {
+    "mean_green_fraction": 0.24751253132832077,
+    "gamma": 0.25,
+    "mean_z": -0.11474755263369187,
+    "sd_z": 0.9887693345330434,
+    "empirical_fpr_at_z4": 0.0,
+    "nominal_fpr_at_z4": 3.167124183311986e-05,
+    "ks_stat_vs_standard_normal": 0.06973489717105608,
+    "ks_p": 0.038936684823644985
+  },
+  "N1_h2": {
+    "mean_green_fraction": 0.2508040201005025,
+    "gamma": 0.25,
+    "mean_z": 0.03704314113108689,
+    "sd_z": 0.9711313498727789,
+    "empirical_fpr_at_z4": 0.0,
+    "nominal_fpr_at_z4": 3.167124183311986e-05,
+    "ks_stat_vs_standard_normal": 0.06371153951829095,
+    "ks_p": 0.07443164848109607
+  },
+  "N1_h3": {
+    "mean_green_fraction": 0.2497670025188917,
+    "gamma": 0.25,
+    "mean_z": -0.010721260374295287,
+    "sd_z": 1.0330967006680016,
+    "empirical_fpr_at_z4": 0.0,
+    "nominal_fpr_at_z4": 3.167124183311986e-05,
+    "ks_stat_vs_standard_normal": 0.05635182813505685,
+    "ks_p": 0.15172571940546398
+  },
+  "N1b": {
+    "n_keys": 24,
+    "mean_offset_over_keys": 0.07343173736255552,
+    "sd_offset_over_keys": 0.3278532259590244,
+    "predicted_sd_sqrt_T_over_V": 0.31622776601683794,
+    "ratio_observed_to_predicted": 1.0367629322643586
+  },
+  "N23_KGW": {
+    "h": 1,
+    "mean_z_right_key": 20.774027958754527,
+    "mean_z_wrong_key": -0.02986712117249747,
+    "sd_z_wrong_key": 0.9749351578427657,
+    "detection_rate_right_key_at_z4": 1.0,
+    "false_detection_rate_wrong_key_at_z4": 0.0
+  },
+  "N23_UNIGRAM": {
+    "h": 0,
+    "mean_z_right_key": 20.92990950857258,
+    "mean_z_wrong_key": 0.026943012562182525,
+    "sd_z_wrong_key": 1.0060582129866213,
+    "detection_rate_right_key_at_z4": 1.0,
+    "false_detection_rate_wrong_key_at_z4": 0.0
+  },
+  "N23_EXP": {
+    "h": 1,
+    "mean_z_right_key": 37.04709629936121,
+    "mean_z_wrong_key": -0.2928135275850521,
+    "sd_z_wrong_key": 1.099422665616182,
+    "detection_rate_right_key_at_z4": 1.0,
+    "false_detection_rate_wrong_key_at_z4": 0.0
+  },
+  "N4": {
+    "ks_stat_vs_uniform": 0.044299488667710885,
+    "ks_p": 0.40076426768646967,
+    "mean_p": 0.49901671128125114
+  }
+}

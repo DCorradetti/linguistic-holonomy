@@ -1,0 +1,233 @@
+{
+  "per_dimension": {
+    "8": {
+      "min_eig": -3.4579012300735276e-16,
+      "n_minus": 0.0,
+      "n_plus_minus_2p": 0.0,
+      "quadform_err": 3.692823824508196e-12,
+      "fix_err": 3.2739929613127353e-12,
+      "delta_from_Rdir_err": 3.65019126036259e-12,
+      "factorisation_err": 5.894428946721256e-12,
+      "orthogonality_err": 3.1333017644873557e-12,
+      "det_err": 2.375877272697835e-12
+    },
+    "16": {
+      "min_eig": -6.195533545761758e-16,
+      "n_minus": 0.0,
+      "n_plus_minus_2p": 0.0,
+      "quadform_err": 2.027267242965536e-12,
+      "fix_err": 1.0840888900077263e-12,
+      "delta_from_Rdir_err": 1.3324896741551129e-12,
+      "factorisation_err": 1.898227494317937e-12,
+      "orthogonality_err": 1.4334376916400792e-12,
+      "det_err": 1.0866862965031032e-12
+    },
+    "64": {
+      "min_eig": -1.9611416039319587e-15,
+      "n_minus": 0.0,
+      "n_plus_minus_2p": 0.0,
+      "quadform_err": 5.280220705117245e-13,
+      "fix_err": 2.501686683305398e-13,
+      "delta_from_Rdir_err": 2.44582132324922e-13,
+      "factorisation_err": 3.926728235877072e-13,
+      "orthogonality_err": 2.8101584847375335e-13,
+      "det_err": 2.4846791291111003e-13
+    },
+    "384": {
+      "min_eig": -6.11801775998981e-15,
+      "n_minus": 0.0,
+      "n_plus_minus_2p": 0.0,
+      "quadform_err": 1.5765166949677223e-13,
+      "fix_err": 7.332570727467016e-14,
+      "delta_from_Rdir_err": 5.129230373768223e-14,
+      "factorisation_err": 1.0680328241922456e-13,
+      "orthogonality_err": 9.339119250362245e-14,
+      "det_err": 1.0325074129013956e-13
+    }
+  },
+  "worst_case": {
+    "min_eig": -6.11801775998981e-15,
+    "n_minus": 0.0,
+    "n_plus_minus_2p": 0.0,
+    "quadform_err": 3.692823824508196e-12,
+    "fix_err": 3.2739929613127353e-12,
+    "delta_from_Rdir_err": 3.65019126036259e-12,
+    "factorisation_err": 5.894428946721256e-12,
+    "orthogonality_err": 3.1333017644873557e-12,
+    "det_err": 2.375877272697835e-12
+  },
+  "realisability": [
+    {
+      "n_detours": 0,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 0.0,
+      "loop_energy": 0.49999999999897854,
+      "sylvester": [
+        2,
+        0,
+        62
+      ]
+    },
+    {
+      "n_detours": 1,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 0.24544869181532478,
+      "loop_energy": 0.5558627953311268,
+      "sylvester": [
+        2,
+        0,
+        62
+      ]
+    },
+    {
+      "n_detours": 2,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 0.5190274658901597,
+      "loop_energy": 0.7197922310467461,
+      "sylvester": [
+        4,
+        0,
+        60
+      ]
+    },
+    {
+      "n_detours": 3,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 0.6898287996201342,
+      "loop_energy": 0.8512192990801358,
+      "sylvester": [
+        4,
+        0,
+        60
+      ]
+    },
+    {
+      "n_detours": 4,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 0.826003102548545,
+      "loop_energy": 0.9648790692630036,
+      "sylvester": [
+        6,
+        0,
+        58
+      ]
+    },
+    {
+      "n_detours": 5,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 0.9427071279284388,
+      "loop_energy": 1.0664929539260997,
+      "sylvester": [
+        6,
+        0,
+        58
+      ]
+    },
+    {
+      "n_detours": 6,
+      "semantic_deficit": 0.12241743811050487,
+      "holonomy_energy": 1.0464761199791823,
+      "loop_energy": 1.159233695751458,
+      "sylvester": [
+        8,
+        0,
+        56
+      ]
+    }
+  ],
+  "gauss_bonnet": {
+    "worst_abs_error": 1.7831948055744423e-09,
+    "worst_abs_error_area_at_most_pi": 1.7831948055744423e-09,
+    "n_triangles_area_at_most_pi": 159,
+    "n_trials": 200,
+    "sample": [
+      {
+        "spherical_excess": 5.107901752242897,
+        "principal_excess": 1.175283554936689,
+        "holonomy_angle": 1.1752835548929466,
+        "abs_error": 4.374234308102132e-11
+      },
+      {
+        "spherical_excess": 0.8296902019738539,
+        "principal_excess": 0.8296902019738539,
+        "holonomy_angle": 0.829690201970761,
+        "abs_error": 3.092859302000761e-12
+      },
+      {
+        "spherical_excess": 0.31002536360149957,
+        "principal_excess": 0.31002536360149957,
+        "holonomy_angle": 0.3100253635976174,
+        "abs_error": 3.882172361358016e-12
+      },
+      {
+        "spherical_excess": 2.7447010110000214,
+        "principal_excess": 2.7447010110000214,
+        "holonomy_angle": 2.7447010110054495,
+        "abs_error": 5.428102411997315e-12
+      },
+      {
+        "spherical_excess": 5.363482828305969,
+        "principal_excess": 0.9197024788736172,
+        "holonomy_angle": 0.9197024788492392,
+        "abs_error": 2.4378055130114262e-11
+      },
+      {
+        "spherical_excess": 0.8172316680603093,
+        "principal_excess": 0.8172316680603093,
+        "holonomy_angle": 0.8172316680579771,
+        "abs_error": 2.3322455078300663e-12
+      }
+    ]
+  },
+  "signature_blindness": {
+    "[2, 0, 62]": {
+      "count": 29,
+      "loop_energy_min": 0.5446310133498433,
+      "loop_energy_max": 1.0489927993414196,
+      "loop_energy_ratio": 1.9260614500988762,
+      "holonomy_energy_min": 0.09879088977331249,
+      "holonomy_energy_max": 0.25212789343668274
+    },
+    "[6, 0, 58]": {
+      "count": 58,
+      "loop_energy_min": 0.8623067288746389,
+      "loop_energy_max": 1.4419350383417728,
+      "loop_energy_ratio": 1.6721834470938004,
+      "holonomy_energy_min": 0.26175913374275805,
+      "holonomy_energy_max": 0.6089336341610719
+    },
+    "[4, 0, 60]": {
+      "count": 55,
+      "loop_energy_min": 0.7202095380082353,
+      "loop_energy_max": 1.3179713167237497,
+      "loop_energy_ratio": 1.8299831468056442,
+      "holonomy_energy_min": 0.16355288933184087,
+      "holonomy_energy_max": 0.5259365594549464
+    },
+    "[8, 0, 56]": {
+      "count": 58,
+      "loop_energy_min": 0.9367622559192424,
+      "loop_energy_max": 1.4635042390915405,
+      "loop_energy_ratio": 1.5623006049228654,
+      "holonomy_energy_min": 0.3645409449023527,
+      "holonomy_energy_max": 0.7910127030758057
+    }
+  },
+  "settings": {
+    "dims": [
+      8,
+      16,
+      64,
+      384
+    ],
+    "trials_per_dim": 300,
+    "chain_lengths": [
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "seed": 20260819
+  }
+}

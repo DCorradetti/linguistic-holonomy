@@ -1,0 +1,19 @@
+[     0.0s] run exp_analysis_v1 v1 started 20260819T145755
+[     0.0s] indicators = results\recorded\run_exp_indicators_v1_20260819T143755\indicators.json
+[     0.0s] 12 of 18 chains retained (z0 >= 4.0); the rest were never detected to begin with
+[     0.0s] 
+[     0.0s] Theorem C on real transformation chains
+[     0.0s] 
+[     0.0s] Result D: does the holonomy energy add anything to (rho, delta)?
+[     0.0s]   Bonferroni-corrected threshold: alpha = 0.01 / 2 = 5.00e-03
+[     0.0s]   KGW: only 6 observations, skipped
+[     0.0s]   UNIGRAM: only 6 observations, skipped
+[     0.0s] 
+[     0.0s] Matched-delta strata (semantic endpoint held approximately fixed)
+[     0.0s] 
+[     0.0s] Exploratory: the same test on the English-waypoint channel
+[     0.0s]   (not preregistered; cannot change the verdict)
+[     0.0s] 
+[     0.0s] Preregistered verdict on Result D: UNDETERMINED (0 of 0 schemes pass)
+[     0.0s]   Fewer than two schemes had enough observations to run the test; the preregistered clause was not executed.
+[     6.4s] run complete -> run_exp_analysis_v1_20260819T145755

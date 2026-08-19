@@ -1,0 +1,33 @@
+[     0.0s] run exp_corpus_v1 v1 started 20260819T122428
+[     0.0s] generator = Qwen/Qwen2.5-0.5B-Instruct
+[    10.0s] tokenizer vocab = 151665; schemes = ['KGW', 'UNIGRAM', 'EXP']
+[    20.3s] stage 1 complete: watermarked generation
+[    20.3s]   KGW      median z0 =   4.16  detected@z>4: 1/1
+[    20.3s]   UNIGRAM  median z0 =   4.02  detected@z>4: 1/1
+[    20.3s]   EXP      median z0 =   3.81  detected@z>4: 0/1
+[    20.3s] chain rt_de: pivots ['de']
+[    49.0s]   ... through de done (3 docs)
+[    49.1s] chain rt_de complete (3 chain records so far)
+[    49.1s] chain rt_fr: pivots ['fr']
+[   128.4s]   ... through fr done (3 docs)
+[   128.4s] chain rt_fr complete (6 chain records so far)
+[   128.4s] chain rt_es: pivots ['es']
+[   175.4s]   ... through es done (3 docs)
+[   175.5s] chain rt_es complete (9 chain records so far)
+[   175.5s] chain rt_de_fr: pivots ['de', 'fr']
+[   177.4s]   ... through de done (3 docs)
+[   179.3s]   ... through fr done (3 docs)
+[   179.4s] chain rt_de_fr complete (12 chain records so far)
+[   179.4s] chain rt_de_de: pivots ['de', 'de']
+[   181.4s]   ... through de done (3 docs)
+[   183.1s]   ... through de done (3 docs)
+[   183.1s] chain rt_de_de complete (15 chain records so far)
+[   183.1s] chain rt_fr_de_es: pivots ['fr', 'de', 'es']
+[   185.2s]   ... through fr done (3 docs)
+[   187.2s]   ... through de done (3 docs)
+[   188.8s]   ... through es done (3 docs)
+[   188.8s] chain rt_fr_de_es complete (18 chain records so far)
+[   188.8s]   KGW      z0=4.16 -> z_final=2.37 (rho=0.725)
+[   188.8s]   UNIGRAM  z0=4.02 -> z_final=3.91 (rho=0.825)
+[   188.8s]   EXP      z0=3.81 -> z_final=3.04 (rho=0.825)
+[   188.9s] run complete -> run_exp_corpus_v1_20260819T122428

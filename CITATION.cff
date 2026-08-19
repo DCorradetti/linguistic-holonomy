@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this research release, please cite the repository and the source formalism."
+title: "Linguistic Holonomy"
+type: software
+authors:
+  - family-names: Corradetti
+    given-names: Daniele
+repository-code: "https://github.com/DCorradetti/linguistic-holonomy"
+url: "https://github.com/DCorradetti/linguistic-holonomy"
+version: 0.1.0
+date-released: 2026-08-19
+keywords:
+  - linguistic holonomy
+  - text watermarking
+  - parallel transport
+  - language models
+  - reproducible research
+references:
+  - type: article
+    title: "Linguistic Loops and Geometric Invariants as a Way to Pre-Verbal Thought?"
+    authors:
+      - family-names: Corradetti
+        given-names: Daniele
+      - family-names: Marrani
+        given-names: Alessio
+    year: 2025
+    doi: "10.48550/arXiv.2503.23311"
