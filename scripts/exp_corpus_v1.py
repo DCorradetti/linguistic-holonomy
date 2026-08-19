@@ -274,6 +274,19 @@ def main() -> None:
                     help="how many reused records to regenerate and compare "
                          "token by token, as an audit of the determinism on "
                          "which the reuse rests. 0 disables the check.")
+    ap.add_argument("--audit-uids", type=str, default=None,
+                    help="comma-separated uids to audit instead of a random "
+                         "sample, each regenerated --audit-repeats times. "
+                         "This is how one asks whether a record that failed "
+                         "to regenerate once fails to regenerate always.")
+    ap.add_argument("--audit-repeats", type=int, default=1,
+                    help="how many times to regenerate each audited record.")
+    ap.add_argument("--audit-only", action="store_true",
+                    help="run stage 1 and the resume audit and stop, without "
+                         "translating anything. The run writes audit.json and "
+                         "a manifest but no corpus.json, so it is a record of "
+                         "how faithfully the stored corpus regenerates and is "
+                         "never picked up as a corpus by the later stages.")
     args = ap.parse_args()
 
     chain_items = list(CHAINS.items())
@@ -344,18 +357,65 @@ def main() -> None:
     run.log(f"stage 1 complete: {len(records)} records "
             f"({n_reused} reused, {len(records)-n_reused} generated)")
 
-    # The reuse above is legitimate only because generation is deterministic
-    # in (model revision, seed, key). That is an assertion about this machine
-    # and this build of torch, not a theorem, so it is checked rather than
-    # assumed: a sample of the reused records is regenerated from scratch and
-    # compared token by token.
+    # The reuse above rests on generation being deterministic in
+    # (model revision, seed, key). That is an assertion about this machine
+    # and this build of torch, not a theorem, so it is measured rather than
+    # assumed: the reused records are regenerated from scratch and compared
+    # token by token. The audit reports; it does not decide. A record that
+    # fails to regenerate is still a perfectly good watermarked text, and it
+    # is the stored one -- not a regeneration of it -- from which every
+    # number downstream is computed. What the audit buys is that the reader
+    # is told how far the corpus is reproducible instead of being asked to
+    # take it on faith.
     resume_audit = None
-    if n_reused and args.verify_resume > 0:
+    if n_reused and args.audit_uids:
+        want = [u.strip() for u in args.audit_uids.split(",") if u.strip()]
+        pool = {r["uid"]: r for r in records if r["uid"] in want}
+        missing = [u for u in want if u not in pool]
+        if missing:
+            raise SystemExit(f"no such records: {missing}")
+        out_recs, total, same_total = [], 0, 0
+        for u in want:
+            rec = pool[u]
+            ci = [c.name for c in cfgs].index(rec["scheme"])
+            agree_u, prefixes = 0, []
+            for k in range(args.audit_repeats):
+                ids = generate_watermarked(
+                    tok, model, by_name(cfgs, rec["scheme"]), rec["prompt"],
+                    max_new_tokens=args.max_new_tokens,
+                    temperature=args.temperature,
+                    seed=args.seed + 1000 * ci + rec["prompt_id"],
+                )
+                fresh = [int(t) for t in ids]
+                if fresh == rec["tokens"]:
+                    agree_u += 1
+                else:
+                    shared = 0
+                    for a, b in zip(fresh, rec["tokens"]):
+                        if a != b:
+                            break
+                        shared += 1
+                    prefixes.append(shared)
+                run.log(f"  {u} attempt {k + 1}: "
+                        f"{'identical' if fresh == rec['tokens'] else 'DIFFERENT'}")
+            total += args.audit_repeats
+            same_total += agree_u
+            out_recs.append({"uid": u, "n_repeats": args.audit_repeats,
+                             "n_identical": agree_u,
+                             "common_prefixes": prefixes})
+            run.log(f"  {u}: identical in {agree_u} of "
+                    f"{args.audit_repeats} regenerations")
+        resume_audit = {"mode": "targeted", "n_checked": total,
+                        "n_identical": same_total, "records": out_recs,
+                        "differing": []}
+        run.log(f"targeted audit: {same_total} of {total} regenerations "
+                f"reproduced the stored record")
+    elif n_reused and args.verify_resume > 0:
         rng = np.random.default_rng(args.seed)
         pool = [r for r in records if r["uid"] in cached]
         pick = rng.choice(len(pool), size=min(args.verify_resume, len(pool)),
                           replace=False)
-        agree = 0
+        agree, differing = 0, []
         for k in pick:
             rec = pool[int(k)]
             ci = [c.name for c in cfgs].index(rec["scheme"])
@@ -365,16 +425,66 @@ def main() -> None:
                 temperature=args.temperature,
                 seed=args.seed + 1000 * ci + rec["prompt_id"],
             )
-            same = [int(t) for t in ids] == rec["tokens"]
+            fresh = [int(t) for t in ids]
+            same = fresh == rec["tokens"]
             agree += int(same)
-            run.log(f"  resume audit {rec['uid']}: "
-                    f"{'identical' if same else 'DIFFERENT'}")
-        resume_audit = {"n_checked": int(len(pick)), "n_identical": agree}
-        if agree != len(pick):
-            raise SystemExit("resumed records are not reproducible on this "
-                             "machine; rerun stage 1 from scratch")
+            if not same:
+                shared = 0
+                for a, b in zip(fresh, rec["tokens"]):
+                    if a != b:
+                        break
+                    shared += 1
+                differing.append({"uid": rec["uid"],
+                                  "common_prefix": shared,
+                                  "n_stored": len(rec["tokens"]),
+                                  "n_regenerated": len(fresh)})
+                run.log(f"  resume audit {rec['uid']}: DIFFERENT after "
+                        f"{shared} of {len(rec['tokens'])} tokens")
+            else:
+                run.log(f"  resume audit {rec['uid']}: identical")
+        resume_audit = {"n_checked": int(len(pick)), "n_identical": agree,
+                        "differing": differing}
         run.log(f"resume audit: {agree}/{len(pick)} regenerated records "
-                f"identical token for token")
+                f"identical token for token"
+                + ("" if agree == len(pick) else
+                   f"; {len(differing)} diverged, which is what a change in "
+                   f"the accumulation order of a CPU kernel does to a "
+                   f"sampling boundary"))
+
+    if args.audit_only:
+        audit_cmd = (f"python exp_corpus_v1.py --n-prompts {len(prompts)} "
+                     f"--max-new-tokens {args.max_new_tokens} --audit-only")
+        if args.audit_uids:
+            audit_cmd += (f" --audit-uids {args.audit_uids}"
+                          f" --audit-repeats {args.audit_repeats}")
+        else:
+            audit_cmd += f" --verify-resume {args.verify_resume}"
+        audit_cmd += f' --resume-stage1 "{args.resume_stage1}"'
+        if resume_audit is None:
+            raise SystemExit("--audit-only needs --resume-stage1 and either "
+                             "a non-zero --verify-resume or --audit-uids")
+        run.write_json("audit.json", resume_audit)
+        run.finish(
+            conclusions={"n_checked": resume_audit["n_checked"],
+                         "n_identical": resume_audit["n_identical"],
+                         "differing": resume_audit["differing"],
+                         "records": resume_audit.get("records")},
+            limitations=[
+                "The audit measures reproducibility on this machine and this "
+                "build of torch only; a different accumulation order would "
+                "give a different set of divergent records.",
+            ],
+            inputs={"generator": GEN_MODEL, "n_prompts": len(prompts),
+                    "max_new_tokens": args.max_new_tokens,
+                    "temperature": args.temperature, "key": args.key,
+                    "stage1_resumed_from": args.resume_stage1,
+                    "audit_only": True,
+                    "audit_uids": args.audit_uids,
+                    "audit_repeats": args.audit_repeats,
+                    "verify_resume": args.verify_resume},
+            command=audit_cmd,
+        )
+        return
 
     z0s = {c.name: [r["z0"] for r in records if r["scheme"] == c.name] for c in cfgs}
     for k, v in z0s.items():

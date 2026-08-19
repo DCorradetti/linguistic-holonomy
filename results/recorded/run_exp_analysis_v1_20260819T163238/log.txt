@@ -1,0 +1,92 @@
+[     0.0s] run exp_analysis_v1 v1 started 20260819T163238
+[     0.0s] indicators = I:\O meu disco\SCIENZA\(20260819) LinguisticLoops and WaterMark\7. Results\Article_LLW\run_exp_indicators_v1_20260819T161524\indicators.json
+[     0.0s] 538 of 540 chains retained; 0 were never detected to begin with (z0 < 4.0) and 2 have a residual statistic that underflowed to minus infinity
+[     0.0s] 
+[     0.0s] Theorem C on real transformation chains
+[     0.0s]   EXP      h=1  n= 178  rho=0.692  rho^(h+1)=0.478  measured intact-window=0.531  observed z-ratio=0.601
+[     0.0s]            corr(ratio, intact-window)=+0.673  corr(ratio, rho)=+0.537
+[     0.0s]            length ratio=0.978  length-corrected prediction=0.535  corr=+0.624  MAE 0.153 -> 0.158  (fraction of chains with residual above the original: 0.090)
+[     0.0s]            median errors 0.088 -> 0.081  length ratio q90=1.48 max=3.32  chains with residual z below -3: 6
+[     0.0s]   KGW      h=1  n= 180  rho=0.700  rho^(h+1)=0.490  measured intact-window=0.542  observed z-ratio=0.509
+[     0.0s]            corr(ratio, intact-window)=+0.513  corr(ratio, rho)=+0.505
+[     0.0s]            length ratio=0.972  length-corrected prediction=0.553  corr=+0.640  MAE 0.110 -> 0.108  (fraction of chains with residual above the original: 0.000)
+[     0.0s]            median errors 0.083 -> 0.086  length ratio q90=1.01 max=4.89  chains with residual z below -3: 3
+[     0.0s]   UNIGRAM  h=0  n= 180  rho=0.694  rho^(h+1)=0.694  measured intact-window=0.694  observed z-ratio=0.685
+[     0.0s]            corr(ratio, intact-window)=-0.206  corr(ratio, rho)=-0.206
+[     0.0s]            length ratio=0.972  length-corrected prediction=0.708  corr=-0.287  MAE 0.088 -> 0.094  (fraction of chains with residual above the original: 0.017)
+[     0.0s]            median errors 0.054 -> 0.067  length ratio q90=1.03 max=1.65  chains with residual z below -3: 0
+[     0.0s] 
+[     0.0s] Theorem C within the base text (each passage against its own six chains)
+[     0.0s]   EXP      over 30 passages: mean within-text corr(intact-window, residual) = +0.680 (median +0.783, positive in 29 of 30); pooled over passages it is +0.673
+[     0.0s]   KGW      over 30 passages: mean within-text corr(intact-window, residual) = +0.733 (median +0.798, positive in 28 of 30); pooled over passages it is +0.513
+[     0.0s]   UNIGRAM  over 30 passages: mean within-text corr(intact-window, residual) = +0.685 (median +0.838, positive in 28 of 30); pooled over passages it is -0.206
+[     0.0s] 
+[     0.0s] Result D: does the holonomy energy add anything to (rho, delta)?
+[     0.0s]   Bonferroni-corrected threshold: alpha = 0.01 / 3 = 3.33e-03
+[     0.0s]   EXP: n=178  R2=0.337
+[     0.0s]      intercept              beta= +0.6095  se=0.0175  t= +34.75  p=3.333e-80
+[     0.0s]      rho                    beta= +0.1156  se=0.0204  t=  +5.66  p=6.207e-08
+[     0.0s]      semantic_deficit       beta= -0.0602  se=0.0411  t=  -1.47  p=1.444e-01
+[     0.0s]      holonomy_energy        beta= -0.0135  se=0.0410  t=  -0.33  p=7.418e-01
+[     0.0s]      -> holonomy term significant and negative: False
+[     0.0s]   KGW: n=180  R2=0.407
+[     0.0s]      intercept              beta= +0.4908  se=0.0114  t= +43.07  p=2.149e-95
+[     0.0s]      rho                    beta= +0.0505  se=0.0136  t=  +3.72  p=2.640e-04
+[     0.0s]      semantic_deficit       beta= -0.0231  se=0.0220  t=  -1.05  p=2.962e-01
+[     0.0s]      holonomy_energy        beta= -0.0701  se=0.0220  t=  -3.18  p=1.719e-03
+[     0.0s]      -> holonomy term significant and negative: True
+[     0.0s]   UNIGRAM: n=180  R2=0.495
+[     0.0s]      intercept              beta= +0.6963  se=0.0097  t= +71.57  p=4.668e-132
+[     0.0s]      rho                    beta= +0.0637  se=0.0135  t=  +4.72  p=4.789e-06
+[     0.0s]      semantic_deficit       beta= +0.2784  se=0.0251  t= +11.09  p=5.037e-22
+[     0.0s]      holonomy_energy        beta= -0.1449  se=0.0234  t=  -6.20  p=4.007e-09
+[     0.0s]      -> holonomy term significant and negative: True
+[     0.0s] 
+[     0.0s] Robustness of Result D: standard errors clustered on the base text, and the same regression with the base text absorbed
+[     0.0s]   EXP      clustered (30 passages): eta beta=-0.0135 se=0.0465 p=7.728e-01
+[     0.0s]            passage absorbed: eta beta=-0.1298 se=0.0842 p=1.340e-01  (within R2=0.346)
+[     0.0s]   KGW      clustered (30 passages): eta beta=-0.0701 se=0.0317 p=3.498e-02
+[     0.0s]            passage absorbed: eta beta=-0.1116 se=0.0471 p=2.467e-02  (within R2=0.584)
+[     0.1s]   UNIGRAM  clustered (30 passages): eta beta=-0.1449 se=0.0388 p=8.205e-04
+[     0.1s]            passage absorbed: eta beta=-0.1408 se=0.0332 p=2.088e-04  (within R2=0.561)
+[     0.1s]   EXP      corr(delta, eta) = +0.902 pooled, +0.797 within the base text
+[     0.1s]   KGW      corr(delta, eta) = +0.851 pooled, +0.860 within the base text
+[     0.1s]   UNIGRAM  corr(delta, eta) = +0.909 pooled, +0.893 within the base text
+[     0.1s] 
+[     0.1s] Matched-delta strata (semantic endpoint held approximately fixed)
+[     0.1s]   EXP      band 0  delta in [0.0048, 0.0531]  n= 45  eta in [0.021, 0.124]  spearman(eta, z-ratio)=-0.422 (p=3.84e-03)
+[     0.1s]   EXP      band 1  delta in [0.0531, 0.0964]  n= 44  eta in [0.066, 0.173]  spearman(eta, z-ratio)=+0.265 (p=8.18e-02)
+[     0.1s]   EXP      band 2  delta in [0.0964, 0.1463]  n= 44  eta in [0.083, 0.209]  spearman(eta, z-ratio)=-0.185 (p=2.30e-01)
+[     0.1s]   EXP      band 3  delta in [0.1463, 0.8997]  n= 45  eta in [0.120, 0.637]  spearman(eta, z-ratio)=-0.255 (p=9.14e-02)
+[     0.1s]   KGW      band 0  delta in [0.0077, 0.0569]  n= 45  eta in [0.014, 0.120]  spearman(eta, z-ratio)=-0.455 (p=1.68e-03)
+[     0.1s]   KGW      band 1  delta in [0.0569, 0.0871]  n= 45  eta in [0.058, 0.146]  spearman(eta, z-ratio)=-0.457 (p=1.60e-03)
+[     0.1s]   KGW      band 2  delta in [0.0871, 0.1312]  n= 45  eta in [0.061, 0.200]  spearman(eta, z-ratio)=-0.230 (p=1.29e-01)
+[     0.1s]   KGW      band 3  delta in [0.1312, 0.4293]  n= 45  eta in [0.111, 0.342]  spearman(eta, z-ratio)=-0.533 (p=1.63e-04)
+[     0.1s]   UNIGRAM  band 0  delta in [0.0196, 0.0539]  n= 45  eta in [0.040, 0.105]  spearman(eta, z-ratio)=-0.140 (p=3.58e-01)
+[     0.1s]   UNIGRAM  band 1  delta in [0.0539, 0.0728]  n= 45  eta in [0.059, 0.122]  spearman(eta, z-ratio)=-0.083 (p=5.88e-01)
+[     0.1s]   UNIGRAM  band 2  delta in [0.0728, 0.0981]  n= 45  eta in [0.071, 0.161]  spearman(eta, z-ratio)=-0.392 (p=7.68e-03)
+[     0.1s]   UNIGRAM  band 3  delta in [0.0981, 0.7106]  n= 45  eta in [0.096, 0.415]  spearman(eta, z-ratio)=+0.282 (p=6.02e-02)
+[     0.1s] 
+[     0.1s] Exploratory: the same test on the English-waypoint channel
+[     0.1s]   (not preregistered; cannot change the verdict)
+[     0.1s]   EXP (English channel): n=88  R2=0.426
+[     0.1s]      intercept              beta= +0.5593  se=0.0248  t= +22.60  p=1.874e-37
+[     0.1s]      rho                    beta= +0.1249  se=0.0290  t=  +4.30  p=4.528e-05
+[     0.1s]      semantic_deficit_en    beta= -0.0239  se=0.0448  t=  -0.53  p=5.946e-01
+[     0.1s]      holonomy_energy_en     beta= -0.0806  se=0.0432  t=  -1.87  p=6.540e-02
+[     0.1s]   KGW (English channel): n=90  R2=0.370
+[     0.1s]      intercept              beta= +0.4311  se=0.0188  t= +22.94  p=2.049e-38
+[     0.1s]      rho                    beta= +0.0367  se=0.0240  t=  +1.53  p=1.299e-01
+[     0.1s]      semantic_deficit_en    beta= -0.0869  se=0.0305  t=  -2.85  p=5.455e-03
+[     0.1s]      holonomy_energy_en     beta= -0.0287  se=0.0346  t=  -0.83  p=4.099e-01
+[     0.1s]   UNIGRAM (English channel): n=90  R2=0.508
+[     0.1s]      intercept              beta= +0.6544  se=0.0144  t= +45.56  p=5.366e-62
+[     0.1s]      rho                    beta= -0.0045  se=0.0206  t=  -0.22  p=8.269e-01
+[     0.1s]      semantic_deficit_en    beta= +0.2175  se=0.0271  t=  +8.02  p=4.815e-12
+[     0.1s]      holonomy_energy_en     beta= -0.1276  se=0.0263  t=  -4.85  p=5.380e-06
+[     0.1s] 
+[     0.1s]   median holonomy energy over the 268 multi-pivot chains: full chain 0.1165, English waypoints only 0.0558
+[     0.1s]   (270 single round trips have two English waypoints and therefore no holonomy in that channel by construction)
+[     0.1s] 
+[     0.1s] Preregistered verdict on Result D: SUPPORTED (2 of 3 schemes pass)
+[     5.5s] run complete -> run_exp_analysis_v1_20260819T163238

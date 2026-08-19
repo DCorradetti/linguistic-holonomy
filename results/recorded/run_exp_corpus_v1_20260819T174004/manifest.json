@@ -1,0 +1,84 @@
+{
+  "script": "exp_corpus_v1",
+  "script_version": "v1",
+  "script_sha256": "5cc4cfc7ce4c7aecef1e7aa595afed8fcee2a015628bff1d5fbb1f7de4c18e06",
+  "timestamp_utc": "2026-08-19T16:44:15Z",
+  "wall_seconds": 251.0,
+  "command": "python exp_corpus_v1.py --n-prompts 30 --max-new-tokens 180 --audit-only --audit-uids KGW_012,UNIGRAM_021,UNIGRAM_025,KGW_016,EXP_000 --audit-repeats 4 --resume-stage1 \"i:/O meu disco/SCIENZA/(20260819) LinguisticLoops and WaterMark/7. Results/Article_LLW/run_exp_corpus_v1_20260819T142910/corpus_stage1.json\"",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+    "n_prompts": 30,
+    "max_new_tokens": 180,
+    "temperature": 1.0,
+    "key": 20260819,
+    "stage1_resumed_from": "i:/O meu disco/SCIENZA/(20260819) LinguisticLoops and WaterMark/7. Results/Article_LLW/run_exp_corpus_v1_20260819T142910/corpus_stage1.json",
+    "audit_only": true,
+    "audit_uids": "KGW_012,UNIGRAM_021,UNIGRAM_025,KGW_016,EXP_000",
+    "audit_repeats": 4,
+    "verify_resume": 3
+  },
+  "output_sha256": {
+    "audit.json": "7afe25b85e24bcb89e0c31140b8ea809b4713c56317995a93e05db9f7ae4c355",
+    "corpus_stage1.json": "5b1080673f203e5df28038e5a1d9bce5b2a8335201fe8002a152d6c7d09dcd3b"
+  },
+  "conclusions": {
+    "n_checked": 20,
+    "n_identical": 12,
+    "differing": [],
+    "records": [
+      {
+        "uid": "KGW_012",
+        "n_repeats": 4,
+        "n_identical": 4,
+        "common_prefixes": []
+      },
+      {
+        "uid": "UNIGRAM_021",
+        "n_repeats": 4,
+        "n_identical": 0,
+        "common_prefixes": [
+          82,
+          82,
+          82,
+          82
+        ]
+      },
+      {
+        "uid": "UNIGRAM_025",
+        "n_repeats": 4,
+        "n_identical": 0,
+        "common_prefixes": [
+          173,
+          173,
+          173,
+          173
+        ]
+      },
+      {
+        "uid": "KGW_016",
+        "n_repeats": 4,
+        "n_identical": 4,
+        "common_prefixes": []
+      },
+      {
+        "uid": "EXP_000",
+        "n_repeats": 4,
+        "n_identical": 4,
+        "common_prefixes": []
+      }
+    ]
+  },
+  "limitations": [
+    "The audit measures reproducibility on this machine and this build of torch only; a different accumulation order would give a different set of divergent records."
+  ]
+}

@@ -42,7 +42,9 @@ def newest_corpus() -> Path:
     runs = sorted(RESULTS.glob("run_exp_corpus_v1_*"),
                   key=lambda p: p.name, reverse=True)
     for r in runs:
-        if (r / "corpus.json").exists():
+        # A run that wrote no manifest was interrupted and supports no claim,
+        # even when it left a partial corpus.json behind.
+        if (r / "corpus.json").exists() and (r / "manifest.json").exists():
             return r / "corpus.json"
     raise FileNotFoundError("no completed corpus run found under 7. Results/")
 
@@ -120,6 +122,7 @@ def main() -> None:
         inv_en = loop_invariants(en_vecs) if len(en_vecs) >= 2 else None
 
         hop = c["hops"][-1]
+        hop0 = c["hops"][0]
         rows.append({
             "uid": c["uid"], "scheme": c["scheme"], "h": c["h"],
             "chain": c["chain"], "L": c["L"], "n_pivots": len(c["pivots"]),
@@ -128,6 +131,11 @@ def main() -> None:
             "ratio": (c["z_final"] / c["z0"]) if c["z0"] > 0 else float("nan"),
             "rho": hop["rho"], "rho_ctx": hop["rho_ctx"],
             "n_tokens_final": hop["n_tokens"],
+            # Round-trip translation does not preserve length, and the
+            # detector statistic is normalised by the square root of the
+            # number of scored positions. The original count is therefore
+            # needed to compare the observed residual with the law.
+            "n_tokens_0": hop0["n_tokens"],
             # geometry side
             "semantic_deficit": inv.semantic_deficit,
             "semantic_path_length": inv.semantic_path_length,

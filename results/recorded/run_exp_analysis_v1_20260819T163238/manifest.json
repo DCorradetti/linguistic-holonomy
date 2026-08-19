@@ -1,0 +1,157 @@
+{
+  "script": "exp_analysis_v1",
+  "script_version": "v1",
+  "script_sha256": "00722cb694599dbd8df4bbc49fb0cc15c9415c000696d2cf8615477907aa14f6",
+  "timestamp_utc": "2026-08-19T15:32:38Z",
+  "wall_seconds": 0.1,
+  "command": "python exp_analysis_v1.py",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.16.1",
+      "torch": "2.8.0+cpu",
+      "transformers": "4.57.6"
+    }
+  },
+  "inputs": {
+    "indicators": "I:\\O meu disco\\SCIENZA\\(20260819) LinguisticLoops and WaterMark\\7. Results\\Article_LLW\\run_exp_indicators_v1_20260819T161524\\indicators.json",
+    "alpha": 0.01,
+    "min_z0": 4.0
+  },
+  "output_sha256": {
+    "analysis.json": "20d835419a487eeb870defcc4513997e2507cab539bf749dbf2cce59c609f761"
+  },
+  "conclusions": {
+    "result_D_verdict": "SUPPORTED",
+    "n_schemes_passing": 2,
+    "result_D_robustness": {
+      "EXP": {
+        "eta_beta_clustered": -0.01353410404603289,
+        "eta_p_clustered": 0.7728461126588251,
+        "eta_beta_fixed_effects": -0.12984927328643148,
+        "eta_p_fixed_effects": 0.1340137581403455
+      },
+      "KGW": {
+        "eta_beta_clustered": -0.07010259978842762,
+        "eta_p_clustered": 0.03498056351295384,
+        "eta_beta_fixed_effects": -0.11158164948595994,
+        "eta_p_fixed_effects": 0.02466979020565796
+      },
+      "UNIGRAM": {
+        "eta_beta_clustered": -0.14485392177061468,
+        "eta_p_clustered": 0.0008204689850984975,
+        "eta_beta_fixed_effects": -0.1407906855640102,
+        "eta_p_fixed_effects": 0.00020879939896168107
+      }
+    },
+    "theorem_C_within_text": {
+      "EXP": {
+        "n_texts": 30,
+        "mean_corr_intact_window": 0.679976925630532,
+        "median_corr_intact_window": 0.7834205322501275,
+        "n_positive": 29,
+        "mean_corr_prediction_length_corrected": 0.654619368910015,
+        "n_positive_length_corrected": 28,
+        "pooled_corr_intact_window": 0.6734250754270393
+      },
+      "KGW": {
+        "n_texts": 30,
+        "mean_corr_intact_window": 0.7333551465907054,
+        "median_corr_intact_window": 0.7982626751099193,
+        "n_positive": 28,
+        "mean_corr_prediction_length_corrected": 0.7460816413627281,
+        "n_positive_length_corrected": 28,
+        "pooled_corr_intact_window": 0.5132398920085149
+      },
+      "UNIGRAM": {
+        "n_texts": 30,
+        "mean_corr_intact_window": 0.6847693694888927,
+        "median_corr_intact_window": 0.8379038395336397,
+        "n_positive": 28,
+        "mean_corr_prediction_length_corrected": 0.675626244466123,
+        "n_positive_length_corrected": 26,
+        "pooled_corr_intact_window": -0.20597107190493774
+      }
+    },
+    "collinearity_delta_eta": {
+      "EXP": {
+        "corr_delta_eta_pooled": 0.9023043200827341,
+        "mean_corr_delta_eta_within_text": 0.7971235234510836,
+        "n_texts": 30
+      },
+      "KGW": {
+        "corr_delta_eta_pooled": 0.8508140862368462,
+        "mean_corr_delta_eta_within_text": 0.8600129243120299,
+        "n_texts": 30
+      },
+      "UNIGRAM": {
+        "corr_delta_eta_pooled": 0.9092975238674026,
+        "mean_corr_delta_eta_within_text": 0.8926381177763465,
+        "n_texts": 30
+      }
+    },
+    "theorem_C": {
+      "EXP": {
+        "h": 1,
+        "n": 178,
+        "median_rho": 0.6916666666666667,
+        "median_ratio": 0.6006893910815283,
+        "median_rho_pow": 0.4784104938271605,
+        "median_intact_window": 0.5307262569832403,
+        "median_length_ratio": 0.9777777777777777,
+        "median_prediction_length_corrected": 0.5353811769958048,
+        "corr_ratio_intact_window": 0.6734250754270393,
+        "corr_ratio_prediction_length_corrected": 0.6236560036152142,
+        "mean_abs_err_vs_intact_window": 0.15264455475565392,
+        "mean_abs_err_vs_prediction_length_corrected": 0.15783233067586958,
+        "median_abs_err_vs_intact_window": 0.08821897906162704,
+        "median_abs_err_vs_prediction_length_corrected": 0.08085115691149902,
+        "n_residual_below_minus3": 6
+      },
+      "KGW": {
+        "h": 1,
+        "n": 180,
+        "median_rho": 0.7,
+        "median_ratio": 0.5085043929579847,
+        "median_rho_pow": 0.48999999999999994,
+        "median_intact_window": 0.5418994413407822,
+        "median_length_ratio": 0.9722222222222222,
+        "median_prediction_length_corrected": 0.5528298669686451,
+        "corr_ratio_intact_window": 0.5132398920085149,
+        "corr_ratio_prediction_length_corrected": 0.639940350339362,
+        "mean_abs_err_vs_intact_window": 0.11014564186458545,
+        "mean_abs_err_vs_prediction_length_corrected": 0.10818129379254154,
+        "median_abs_err_vs_intact_window": 0.0828574513625315,
+        "median_abs_err_vs_prediction_length_corrected": 0.0863908868390397,
+        "n_residual_below_minus3": 3
+      },
+      "UNIGRAM": {
+        "h": 0,
+        "n": 180,
+        "median_rho": 0.6944444444444444,
+        "median_ratio": 0.6848510655852709,
+        "median_rho_pow": 0.6944444444444444,
+        "median_intact_window": 0.6944444444444444,
+        "median_length_ratio": 0.9722222222222222,
+        "median_prediction_length_corrected": 0.7075739572788482,
+        "corr_ratio_intact_window": -0.20597107190493774,
+        "corr_ratio_prediction_length_corrected": -0.28721382685523655,
+        "mean_abs_err_vs_intact_window": 0.08827591657638918,
+        "mean_abs_err_vs_prediction_length_corrected": 0.09440003910173246,
+        "median_abs_err_vs_intact_window": 0.05375031911442485,
+        "median_abs_err_vs_prediction_length_corrected": 0.06663302918933789,
+        "n_residual_below_minus3": 0
+      }
+    }
+  },
+  "limitations": [
+    "Round-trip machine translation is one attack family; the verdict does not transfer to learned paraphrasers untested here.",
+    "The six chains of a scheme are applied to one and the same set of base texts, so the observations are clustered by prompt and the classical standard errors reported here are optimistic.",
+    "A single embedder defines both delta and eta.",
+    "The holonomy energy is one scalar reduction of H; a null result for it is not a null result for the path datum itself.",
+    "Machine translation occasionally degenerates into repetitive output, on which the independence hypothesis behind the intact-window law fails outright; such chains are reported, not removed.",
+    "The intact-window count is read off the longest common subsequence of the two token strings and does not check that a surviving window is still contiguous in the attacked text, so it is an upper bound on the number of intact seeding windows the detector actually sees."
+  ]
+}

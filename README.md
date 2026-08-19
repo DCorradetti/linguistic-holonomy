@@ -18,7 +18,7 @@ Statistical text watermarks inhabit the freedom of the signifier: they mark choi
 The repository is the public research release accompanying the draft *Linguistic Holonomy and the Erosion of Statistical Watermarks*. It contains the manuscript, the exact proof certificates, runnable Python experiments, and immutable recorded outputs supporting the certified claims.
 
 > [!IMPORTANT]
-> This is a transparent work-in-progress snapshot dated 19 August 2026, not a submission package. The mathematical core and the synthetic detector experiments are certified; the real-text pilot is not yet large enough to execute the preregistered test. See [Research status](STATUS.md).
+> This is a transparent work-in-progress snapshot dated 19 August 2026, not a submission package. The mathematical core and synthetic detector experiments are certified, and the expanded real-text study now executes the preregistered test on 540 rewriting chains. The statistical caveats remain material; see [Research status](STATUS.md).
 
 ## The idea in one line
 
@@ -53,11 +53,15 @@ flowchart LR
 | The loop rotation is parallel transport and factors into endpoint transport and a holonomy in $\mathrm{SO}(n-1)$. | Proven | [Certificate B](certificates/Certificate_holonomy_factorization_v1.md) |
 | For context-seeded watermarks, residual signal is controlled by the intact seeding windows; under independent retention it decays as $\rho^{h+1}$. | Proven under stated hypotheses; numerically verified | [Certificate C](certificates/Certificate_context_decay_v1.md) |
 | The implemented detectors are calibrated against their synthetic nulls. | Verified, with explicit limitations | [Detector certificate](certificates/Certificate_detector_validation_v1.md) |
-| Holonomy energy predicts residual detectability beyond retention and semantic deficit on real rewriting chains. | Not yet evaluable in the pilot | [Status and next steps](STATUS.md) |
+| Holonomy energy predicts residual detectability beyond retention and semantic deficit on real rewriting chains. | Preregistered criterion supported in 2/3 schemes with classical errors; cluster-robust evidence is strongest for Unigram | [Full result and caveats](STATUS.md#the-expanded-real-text-result) |
+
+## New in the expanded study
+
+The updated experiment follows 90 watermarked passages through six round-trip translation chains, producing 540 attacked texts. The exact detector remains above threshold in 464 cases. The preregistered holonomy coefficient is negative in all three schemes and passes the corrected classical threshold in KGW and Unigram; after clustering on the 30 base passages per scheme, only Unigram still passes that threshold. The result is therefore encouraging but deliberately reported as preliminary, not as submission-level validation.
 
 ## Explore the release
 
-- **Article:** [read the draft PDF](output/pdf/Linguistic_Holonomy_draft_v1.pdf) or inspect the [LaTeX source](paper/Article_LLW_v1.tex).
+- **Article:** [read the updated draft PDF](output/pdf/Linguistic_Holonomy_draft_v2.pdf) or inspect the [v2 LaTeX source](paper/Article_LLW_v2.tex). The [original public v1](paper/Article_LLW_v1.tex) remains unchanged.
 - **Proof layer:** the four human-readable [certificates](certificates/).
 - **Computational layer:** exact implementations in [scripts](scripts/) and lightweight regression tests in [tests](tests/).
 - **Evidence:** immutable, hash-carrying [recorded runs](results/recorded/).
